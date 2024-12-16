@@ -18,6 +18,7 @@ namespace COBA2
         private string email;
         private string password;
         private string no_hp;
+        private string alamat;
         public FormRegist()
         {
             InitializeComponent();
@@ -31,12 +32,13 @@ namespace COBA2
                 string email = textBox3.Text;
                 string password = textBox4.Text;
                 string no_hp = textBox5.Text;
+                string alamat = textBox6.Text;
 
-                if (string.IsNullOrEmpty(nama) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(no_hp)) { MessageBox.Show("Lengkapi data terlebih dahulu"); }
+                if (string.IsNullOrEmpty(nama) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(no_hp) || string.IsNullOrEmpty(alamat)) { MessageBox.Show("Lengkapi data terlebih dahulu"); }
                 else
                     try
                     {
-                        int result = C_Regist.RegisterUser(nama, username, email, password, no_hp);
+                        int result = C_Regist.RegisterUser(nama, username, email, password, no_hp, alamat);
                         if (result == 0)
                         {
                             MessageBox.Show("Registrasi berhasil");

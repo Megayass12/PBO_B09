@@ -47,7 +47,6 @@
             panel2 = new Panel();
             panel9 = new Panel();
             panel10 = new Panel();
-            pictureBox2 = new PictureBox();
             label1 = new Label();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
@@ -60,7 +59,6 @@
             panel2.SuspendLayout();
             panel9.SuspendLayout();
             panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -95,6 +93,7 @@
             btnMyOrders.Text = "               My Orders";
             btnMyOrders.TextAlign = ContentAlignment.MiddleLeft;
             btnMyOrders.UseVisualStyleBackColor = false;
+            btnMyOrders.Click += btnMyOrders_Click;
             // 
             // panel8
             // 
@@ -117,6 +116,7 @@
             btnHistory.Text = "               History";
             btnHistory.TextAlign = ContentAlignment.MiddleLeft;
             btnHistory.UseVisualStyleBackColor = false;
+            btnHistory.Click += btnHistory_Click;
             // 
             // panel7
             // 
@@ -272,23 +272,12 @@
             // panel10
             // 
             panel10.BackColor = Color.FromArgb(76, 111, 87);
-            panel10.Controls.Add(pictureBox2);
             panel10.Controls.Add(label1);
             panel10.Dock = DockStyle.Top;
             panel10.Location = new Point(0, 0);
             panel10.Name = "panel10";
             panel10.Size = new Size(610, 63);
             panel10.TabIndex = 15;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(532, 9);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(51, 43);
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
             // 
             // label1
             // 
@@ -341,7 +330,9 @@
             DoubleBuffered = true;
             IsMdiContainer = true;
             Name = "FormDashCust";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormDashCust";
+            WindowState = FormWindowState.Maximized;
             Load += FormDashCust_Load;
             panel8.ResumeLayout(false);
             panel7.ResumeLayout(false);
@@ -353,7 +344,6 @@
             panel9.ResumeLayout(false);
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -381,6 +371,5 @@
         private PictureBox pictureBox1;
         private Panel panel10;
         private Label label1;
-        private PictureBox pictureBox2;
     }
 }

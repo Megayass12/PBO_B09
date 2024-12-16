@@ -34,10 +34,9 @@
             textBox1 = new TextBox();
             button1 = new Button();
             textBox3 = new TextBox();
-            pictureBox1 = new PictureBox();
             panel1 = new Panel();
             label3 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel3 = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -92,18 +91,9 @@
             textBox3.TabIndex = 6;
             textBox3.TextChanged += textBox3_TextChanged;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(58, 49);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(283, 349);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
-            // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(193, 244, 151);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(textBox3);
@@ -118,6 +108,7 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(132, 57);
@@ -126,19 +117,29 @@
             label3.TabIndex = 7;
             label3.Text = "Welcome!";
             // 
+            // panel3
+            // 
+            panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
+            panel3.BackgroundImageLayout = ImageLayout.None;
+            panel3.Location = new Point(46, 59);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(274, 299);
+            panel3.TabIndex = 9;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(76, 111, 87);
             ClientSize = new Size(800, 450);
+            Controls.Add(panel3);
             Controls.Add(panel1);
-            Controls.Add(pictureBox1);
             Name = "Form1";
             RightToLeft = RightToLeft.No;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -151,8 +152,9 @@
         private TextBox textBox1;
         private Button button1;
         private TextBox textBox3;
-        private PictureBox pictureBox1;
         private Panel panel1;
         private Label label3;
+        private Panel panel2;
+        private Panel panel3;
     }
 }

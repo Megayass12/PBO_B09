@@ -13,9 +13,13 @@ namespace COBA2.View
     public partial class FormDashCust : Form
     {
         FormCustD dashboard;
-        public FormDashCust()
+        private int userId;
+        public FormDashCust(int userId)
+        
         {
             InitializeComponent();
+            this.userId = userId;
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -41,7 +45,7 @@ namespace COBA2.View
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormKatalogC formKatalogC = new FormKatalogC();
+            FormKatalogC formKatalogC = new FormKatalogC(userId);
             formKatalogC.ShowDialog();
 
         }
@@ -63,6 +67,7 @@ namespace COBA2.View
 
         private void FormDashCust_Load(object sender, EventArgs e)
         {
+
 
         }
 
@@ -104,15 +109,29 @@ namespace COBA2.View
         private void btnPrediction_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormPrediksi frmPrediksi = new FormPrediksi();
+            FormPrediksi frmPrediksi = new FormPrediksi(userId);
             frmPrediksi.ShowDialog();
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormProfile frmProfile = new FormProfile();
+            FormProfile frmProfile = new FormProfile(userId);
             frmProfile.ShowDialog();
+        }
+
+        private void btnMyOrders_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormTransaksi frmTransaksi = new FormTransaksi(userId);
+            frmTransaksi.ShowDialog();
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            History hstry = new History(userId);
+            hstry.ShowDialog();
         }
     }
 }

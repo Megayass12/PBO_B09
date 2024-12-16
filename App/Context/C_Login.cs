@@ -11,30 +11,31 @@ using COBA2.App.Model;
 
 namespace COBA2.App.Context
 {
-    internal class C_Login : DatabaseWrapper
+    internal class C_Login : DatabaseWrapper //inheritance
     {
+        private int userId;
         private static string table = "Users";
 
-        public static long login(string username, string password)
-        {
-            try
-            {
-                string query = $"SELECT COUNT(*) FROM {table} WHERE username = @username AND password = @password";
-                NpgsqlParameter[] parameters =
-                {
-            new NpgsqlParameter("username", NpgsqlDbType.Varchar) { Value = username },
-            new NpgsqlParameter("password", NpgsqlDbType.Varchar) { Value = password }
-        };
 
-                long result = commandExecutor(query, parameters);
-                return result > 0 ? 1 : 0; // Return 1 if a match is found, otherwise return 0
-            }
-            catch (Exception ex)
+        public static int login(string username, string password)
+        {
+            string query = "SELECT id FROM users WHERE username = @username AND password = @password";
+            NpgsqlParameter[] parameters = {
+        new NpgsqlParameter("@username", username),
+        new NpgsqlParameter("@password", password)
+    };
+
+            DataTable result = DatabaseWrapper.queryExecutor(query, parameters);
+
+            if (result.Rows.Count > 0)
             {
-                MessageBox.Show("Error: " + ex.Message);
-                return 0;
+                return Convert.ToInt32(result.Rows[0]["id"]); // Ambil userId
             }
+
+            return 0; // Jika login gagal
         }
+
+
 
 
 

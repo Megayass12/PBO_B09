@@ -18,10 +18,11 @@ namespace COBA2
     {
         private string username;
         private string password;
-
+        private int userId;
         public Form1()
         {
             InitializeComponent();
+            this.userId = userId;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,42 +36,42 @@ namespace COBA2
             }
             else
             {
-                var loginSuccess = C_Login.login(username, password);
-
-                if (loginSuccess == 1)
+                int userId = C_Login.login(username, password);
+                if (userId > 0)
                 {
-                    MessageBox.Show("Login berhasil!");
-                    if ((username == "mega12") || (password == "1234"))
+                    MessageBox.Show("Login Berhasil");
+                    if (userId == 9 && username == "mega12" && password == "1234")
                     {
                         this.Hide();
-                        FormDashAdmin frmDashAdm = new FormDashAdmin();
+                        FormBerandaAdmin frmDashAdm = new FormBerandaAdmin(userId);
                         frmDashAdm.ShowDialog();
+                        
+
+
                     }
                     else
                     {
                         this.Hide();
-                        FormDashCust frmDashCust = new FormDashCust();
-                        frmDashCust.ShowDialog();
-
-                        //frmCustD.ShowDialog();
+                        FormDashCust frmDashCust = new FormDashCust(userId); // Kirim userId
+                        frmDashCust.ShowDialog(); 
                     }
-                    // Tambahkan logika setelah login berhasil, seperti membuka form baru
                 }
-                else if (loginSuccess == 0)
+                else
                 {
                     MessageBox.Show("Username atau password salah!");
                 }
             }
         }
+                
 
-        private void label2_Click(object sender, EventArgs e)
+                private void label2_Click(object sender, EventArgs e)
         {
-            // Logika untuk label2 jika diperlukan
+            
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            // Logika untuk textBox2 jika diperlukan
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
