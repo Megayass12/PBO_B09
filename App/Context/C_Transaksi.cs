@@ -8,13 +8,13 @@ using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace COBA2.App.Context
 {
-    internal class C_Transaksi : DatabaseWrapper // inheritance
+    internal class C_Transaksi : DatabaseWrapper 
     {
-        private readonly TransaksiModel _model; // enkapsulasi
+        private readonly TransaksiModel _model; 
 
-        public C_Transaksi() // konstruktor
+        public C_Transaksi() 
         {
-            _model = new TransaksiModel(); // penerapan enkapsulasi dalam konstruktor
+            _model = new TransaksiModel(); 
         }
 
         public static DataTable All()
@@ -69,14 +69,7 @@ namespace COBA2.App.Context
                 new NpgsqlParameter("@id_transaksi", transaksi.id_transaksi)
             };
             commandExecutor(query, parameters);
-            //catch (Exception e)
-            //{
-            //    throw new Exception("Error ketika melakukan update status transaksi:" + e.Message);
-            //}
-            //finally
-            //{
-            //    DatabaseWrapper.closeConnection();
-            //}
+       
         }
 
         internal static DataTable getTransaksiById(int transaksiId)

@@ -37,7 +37,9 @@
             panel1 = new Panel();
             label3 = new Label();
             panel3 = new Panel();
+            pictureBox2 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -126,12 +128,23 @@
             panel3.Size = new Size(274, 299);
             panel3.TabIndex = 9;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(6, 12);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(34, 48);
+            pictureBox2.TabIndex = 10;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(76, 111, 87);
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBox2);
             Controls.Add(panel3);
             Controls.Add(panel1);
             Name = "Form1";
@@ -142,6 +155,7 @@
             Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -156,5 +170,6 @@
         private Label label3;
         private Panel panel2;
         private Panel panel3;
+        private PictureBox pictureBox2;
     }
 }

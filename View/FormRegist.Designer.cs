@@ -42,11 +42,13 @@
             label6 = new Label();
             button1 = new Button();
             panel1 = new Panel();
-            pictureBox2 = new PictureBox();
-            textBox6 = new TextBox();
             label7 = new Label();
+            textBox6 = new TextBox();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -186,24 +188,6 @@
             panel1.Size = new Size(682, 366);
             panel1.TabIndex = 12;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(72, 5);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(86, 41);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 13;
-            pictureBox2.TabStop = false;
-            // 
-            // textBox6
-            // 
-            textBox6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox6.Location = new Point(227, 273);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(336, 23);
-            textBox6.TabIndex = 12;
-            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -214,12 +198,41 @@
             label7.TabIndex = 13;
             label7.Text = "Alamat";
             // 
+            // textBox6
+            // 
+            textBox6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBox6.Location = new Point(227, 273);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(336, 23);
+            textBox6.TabIndex = 12;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(72, 5);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(86, 41);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 13;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(12, -2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(34, 48);
+            pictureBox1.TabIndex = 14;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // FormRegist
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(76, 111, 87);
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(pictureBox2);
             Controls.Add(panel1);
             Name = "FormRegist";
@@ -229,6 +242,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -250,5 +264,6 @@
         private PictureBox pictureBox2;
         private Label label7;
         private TextBox textBox6;
+        private PictureBox pictureBox1;
     }
 }

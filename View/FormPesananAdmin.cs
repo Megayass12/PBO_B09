@@ -15,13 +15,13 @@ namespace COBA2.View
 {
     public partial class FormPesananAdmin : Form
     {
-        private int userId;
+        private int userId =9;
         private int transaksiId;
         public FormPesananAdmin(int transaksiId)
         {
             InitializeComponent();
             LoadTransaksiData();
-            //selectedtransaksiId = transaksiId;
+            
 
         }
 
@@ -58,8 +58,6 @@ namespace COBA2.View
             {
                 ResetCustomColumns();
 
-                //DataTable transaksiData = DatabaseWrapper.GetTransaksiData();
-                //dataGridView1.DataSource = transaksiData;
                 dataGridView1.DataSource = DatabaseWrapper.GetTransaksiData();
 
                 if (dataGridView1.Columns["id_transaksi"] != null)

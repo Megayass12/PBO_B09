@@ -81,7 +81,6 @@ namespace COBA2.App.Core
                     }
                     command.Prepare();
 
-                    // Periksa apakah hasilnya null sebelum melakukan casting
                     object result = command.ExecuteScalar();
                     return result != null ? Convert.ToInt64(result) : 0;
                 }
@@ -96,7 +95,6 @@ namespace COBA2.App.Core
             }
         }
 
-        // Method untuk menambahkan user baru
         public static int InsertUser(string nama, string username, string email, string password, string no_hp, string alamat)
         {
             try

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrediksi));
             panel1 = new Panel();
+            textBox3 = new TextBox();
+            label6 = new Label();
             textBox2 = new TextBox();
             label5 = new Label();
             pictureBox1 = new PictureBox();
@@ -42,8 +44,6 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox2 = new PictureBox();
-            label6 = new Label();
-            textBox3 = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -71,6 +71,25 @@
             panel1.Size = new Size(676, 376);
             panel1.TabIndex = 0;
             // 
+            // textBox3
+            // 
+            textBox3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            textBox3.Location = new Point(341, 154);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(121, 23);
+            textBox3.TabIndex = 19;
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label6.Location = new Point(201, 157);
+            label6.Name = "label6";
+            label6.Size = new Size(133, 15);
+            label6.TabIndex = 18;
+            label6.Text = "Jumlah bibit per lubang";
+            // 
             // textBox2
             // 
             textBox2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
@@ -86,9 +105,9 @@
             label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             label5.Location = new Point(201, 127);
             label5.Name = "label5";
-            label5.Size = new Size(73, 15);
+            label5.Size = new Size(123, 15);
             label5.TabIndex = 16;
-            label5.Text = "Jarak Tanam";
+            label5.Text = "Jarak Tanam dalam m";
             // 
             // pictureBox1
             // 
@@ -171,9 +190,9 @@
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             label2.Location = new Point(201, 92);
             label2.Name = "label2";
-            label2.Size = new Size(66, 15);
+            label2.Size = new Size(122, 15);
             label2.TabIndex = 1;
-            label2.Text = "Luas Lahan";
+            label2.Text = "Luas Lahan per hektar";
             // 
             // label1
             // 
@@ -196,25 +215,6 @@
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
-            // 
-            // label6
-            // 
-            label6.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            label6.Location = new Point(201, 157);
-            label6.Name = "label6";
-            label6.Size = new Size(133, 15);
-            label6.TabIndex = 18;
-            label6.Text = "Jumlah bibit per lubang";
-            // 
-            // textBox3
-            // 
-            textBox3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBox3.Location = new Point(341, 154);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(121, 23);
-            textBox3.TabIndex = 19;
             // 
             // FormPrediksi
             // 

@@ -34,10 +34,9 @@ namespace COBA2.View
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-        }
-        //{
 
-        //}
+        }
+       
 
         private void FormProfile_Load(object sender, EventArgs e)
         {

@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using COBA2.App.Context;
 using COBA2.App.Core;
 using Npgsql;
-using COBA2.App.Model; // Pastikan namespace yang benar untuk kelas Prediksi
+using COBA2.App.Model; 
 
 namespace COBA2.View
 {
@@ -44,7 +44,7 @@ namespace COBA2.View
             }
         }
 
-        // Load data pupuk ke comboBox2
+       
         private void LoadPupukData()
         {
             try
@@ -139,7 +139,7 @@ namespace COBA2.View
                     MessageBox.Show("Data prediksi tidak ditemukan untuk kombinasi Tanaman dan Jenis Pupuk tersebut.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
+                    
                 // Hitung total kebutuhan pupuk
                 double totalKebutuhan = kebutuhanPerHektar * luasLahan;
 

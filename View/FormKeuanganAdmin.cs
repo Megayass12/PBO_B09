@@ -141,17 +141,7 @@ namespace COBA2.View
 
         private void btnMyOrders_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    FormPesananAdmin formTransaksi = new FormPesananAdmin();
-            //    this.Hide();
-            //    formTransaksi.ShowDialog();
-            //    this.Show();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error saat membuka halaman transaksi: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+           
         }
 
         private void btnKatalog_Click(object sender, EventArgs e)
@@ -179,10 +169,10 @@ namespace COBA2.View
         private void button3_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-               "Apakah Anda yakin ingin keluar?",        // Pesan popup
-               "Konfirmasi Keluar",                     // Judul popup
-               MessageBoxButtons.YesNo,                 // Tombol Yes dan No
-               MessageBoxIcon.Question                  // Ikon pertanyaan
+               "Apakah Anda yakin ingin keluar?",       
+               "Konfirmasi Keluar",                    
+               MessageBoxButtons.YesNo,                 
+               MessageBoxIcon.Question                  
            );
 
             // Mengecek tombol yang dipilih pengguna
@@ -196,7 +186,6 @@ namespace COBA2.View
             else
             {
                 MessageBox.Show("Aksi dibatalkan.");
-
 
             }
         }

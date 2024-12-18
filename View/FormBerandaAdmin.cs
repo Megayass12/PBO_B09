@@ -18,7 +18,7 @@ namespace COBA2.View
         public FormBerandaAdmin(int userId)
         {
             InitializeComponent();
-            MessageBox.Show($"UserId di Load : {this.userId}");
+            
 
         }
 

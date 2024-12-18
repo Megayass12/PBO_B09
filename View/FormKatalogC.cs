@@ -13,44 +13,31 @@ namespace COBA2.View
     public partial class FormKatalogC : Form
     {
         public int userId;
-
-        // Dictionary to store quantities by row index or unique ID
         private Dictionary<string, int> kuantitas = new Dictionary<string, int>();
 
-        //konstruktor default
         public FormKatalogC(int userId)
         {
             InitializeComponent();
             this.userId = userId;
-
-
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
-
-
         }
-
-
-
 
         public void FormKatalogC_Load(object sender, EventArgs e)
         {
-            //MessageBox.Show($"UserId di Load : {this.userId}");
-            //MessageBox.Show($"UserId di Load : {userId}");
             LoadPupukData(dataGridView1);
             LoadBenihData(dataGridView2);
         }
 
         private void AddNoColumns(DataGridView targetGrid)
         {
-            // Cek apakah kolom "nomor" sudah ada
             if (targetGrid.Columns["nomor"] == null)
             {
                 DataGridViewTextBoxColumn nomorColumn = new DataGridViewTextBoxColumn
                 {
                     HeaderText = "No",
                     Name = "nomor",
-                    DisplayIndex = 0 // indeks nampilinnya
+                    DisplayIndex = 0 
                 };
                 targetGrid.Columns.Add(nomorColumn);
             }
@@ -58,7 +45,6 @@ namespace COBA2.View
 
         private void ResetCustomColumns(DataGridView targetGrid)
         {
-            // Hapus kolom custom jika ada
             if (targetGrid.Columns["nomor"] != null)
                 targetGrid.Columns.Remove("nomor");
             if (targetGrid.Columns["Tambah"] != null)
@@ -71,7 +57,6 @@ namespace COBA2.View
 
         private void AddAddLessColumns(DataGridView targetGrid)
         {
-            // Cek apakah kolom "Tambah" sudah ada
             if (targetGrid.Columns["Tambah"] == null)
             {
                 DataGridViewButtonColumn tambahButtonColumn = new DataGridViewButtonColumn
@@ -80,32 +65,32 @@ namespace COBA2.View
                     HeaderText = "Tambahh",
                     Text = "+",
                     UseColumnTextForButtonValue = true,
-                    DisplayIndex = 4 // Tambahkan di urutan akhir
+                    DisplayIndex = 6 
                 };
                 targetGrid.Columns.Add(tambahButtonColumn);
             }
 
-            // Cek apakah kolom "Kuantitas" sudah ada
+            
             if (targetGrid.Columns["Kuantitas"] == null)
             {
                 DataGridViewTextBoxColumn kuantitasColumn = new DataGridViewTextBoxColumn
                 {
                     Name = "Kuantitas",
                     HeaderText = "Kuantitas",
-                    DisplayIndex = 5, // Tambahkan di urutan akhir
+                    DisplayIndex = 5, 
                     ReadOnly = true,
                     ValueType = typeof(int),
                 };
                 targetGrid.Columns.Add(kuantitasColumn);
 
-                //nyetel nilai default e jadi 0
+                
                 foreach (DataGridViewRow row in targetGrid.Rows)
                 {
                     row.Cells["Kuantitas"].Value = 0;
                 }
             }
 
-            // Cek apakah kolom "Kurang" sudah ada
+            
             if (targetGrid.Columns["Kurang"] == null)
             {
                 DataGridViewButtonColumn kurangButtonColumn = new DataGridViewButtonColumn
@@ -114,7 +99,7 @@ namespace COBA2.View
                     HeaderText = "Kurang",
                     Text = "-",
                     UseColumnTextForButtonValue = true,
-                    DisplayIndex = 6 // Tambahkan di urutan akhir
+                    DisplayIndex = 4 
                 };
                 targetGrid.Columns.Add(kurangButtonColumn);
             }
@@ -128,7 +113,7 @@ namespace COBA2.View
         
                 DataTable pupukData = DatabaseWrapper.GetPupukData();
 
-                dataGridView1.DataSource = pupukData; // Menampilkan data di DataGridView
+                dataGridView1.DataSource = pupukData; 
 
                 if (dataGridView1.Columns["id_produk"] != null) dataGridView1.Columns["id_produk"].Visible = false;
                 if (dataGridView1.Columns["id_kategori"] != null) dataGridView1.Columns["id_kategori"].Visible = false;
@@ -165,17 +150,16 @@ namespace COBA2.View
             frmDashCust.ShowDialog();
         }
 
-
         private void LoadBenihData(DataGridView targetGrid)
         {
             try
             {
-                // Hapus kolom kustom sebelum memuat data baru
+                
                 ResetCustomColumns(targetGrid);
                 
                 DataTable BenihData = DatabaseWrapper.GetBenihData();
 
-                dataGridView2.DataSource = BenihData; // Menampilkan data di DataGridView
+                dataGridView2.DataSource = BenihData; 
 
                 if (dataGridView2.Columns["id_produk"] != null) dataGridView2.Columns["id_produk"].Visible = false;
                 if (dataGridView2.Columns["id_kategori"] != null) dataGridView2.Columns["id_kategori"].Visible = false;
@@ -213,7 +197,7 @@ namespace COBA2.View
                         string id = row.Cells[idColumnName].Value.ToString();
                         row.Cells["nomor"].Value = row.Index + 1;
 
-                        // Use the dictionary to fetch the quantity or default to 0
+                        
                         int quantity = kuantitas.ContainsKey(id) ? kuantitas[id] : 0;
                         row.Cells["Kuantitas"].Value = quantity;
                     }
@@ -279,10 +263,13 @@ namespace COBA2.View
                 if (sukses)
                 {
                     MessageBox.Show("Transaksi berhasil disimpan.");
+                    this.Close(); 
+                    FormDashCust formDashCust = new FormDashCust(userId);
+                    formDashCust.ShowDialog();
                 }
                 else
                 {
-                    // INI DIRUBAH JANGAN LUPA YAK
+                   
                     MessageBox.Show(userId.ToString());
                 }
             }

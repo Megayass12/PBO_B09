@@ -14,7 +14,4 @@ namespace COBA2.App.Model
         public string deskripsi_produk { get; set; } // Kuantitas yang dipilih
         public int stok { get; set; }
     }
-
-   
-
 }

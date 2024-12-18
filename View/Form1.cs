@@ -45,15 +45,15 @@ namespace COBA2
                         this.Hide();
                         FormBerandaAdmin frmDashAdm = new FormBerandaAdmin(userId);
                         frmDashAdm.ShowDialog();
-                        
+
 
 
                     }
                     else
                     {
                         this.Hide();
-                        FormDashCust frmDashCust = new FormDashCust(userId); // Kirim userId
-                        frmDashCust.ShowDialog(); 
+                        FormDashCust frmDashCust = new FormDashCust(userId);
+                        frmDashCust.ShowDialog();
                     }
                 }
                 else
@@ -62,16 +62,16 @@ namespace COBA2
                 }
             }
         }
-                
 
-                private void label2_Click(object sender, EventArgs e)
+
+        private void label2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -92,6 +92,13 @@ namespace COBA2
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLand formLand = new FormLand();
+            formLand.ShowDialog();
         }
     }
 }

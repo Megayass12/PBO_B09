@@ -48,7 +48,6 @@
             btnKatalog = new Button();
             panel2 = new Panel();
             label1 = new Label();
-            panel9 = new Panel();
             dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
             panel8.SuspendLayout();
@@ -62,7 +61,6 @@
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
-            panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -76,6 +74,7 @@
             panel1.Controls.Add(panel5);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel4);
+            panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
@@ -118,6 +117,7 @@
             // 
             // pictureBox5
             // 
+            pictureBox5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
             pictureBox5.Location = new Point(-4, 324);
             pictureBox5.Margin = new Padding(3, 2, 3, 2);
@@ -279,10 +279,11 @@
             // 
             panel2.BackColor = Color.FromArgb(76, 111, 87);
             panel2.Controls.Add(label1);
-            panel2.Location = new Point(213, 0);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(214, 0);
             panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(616, 63);
+            panel2.Size = new Size(610, 63);
             panel2.TabIndex = 2;
             panel2.Paint += panel2_Paint;
             // 
@@ -297,26 +298,18 @@
             label1.TabIndex = 3;
             label1.Text = "Semai's Orders";
             // 
-            // panel9
-            // 
-            panel9.BackColor = Color.FromArgb(155, 191, 130);
-            panel9.Controls.Add(dataGridView1);
-            panel9.Location = new Point(213, 59);
-            panel9.Margin = new Padding(3, 2, 3, 2);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(612, 394);
-            panel9.TabIndex = 3;
-            // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridView1.BackgroundColor = Color.FromArgb(155, 191, 130);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = Color.FromArgb(155, 191, 130);
-            dataGridView1.Location = new Point(1, 0);
+            dataGridView1.Location = new Point(213, 57);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(612, 385);
+            dataGridView1.Size = new Size(613, 396);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -325,7 +318,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(824, 453);
-            Controls.Add(panel9);
+            Controls.Add(dataGridView1);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Margin = new Padding(3, 2, 3, 2);
@@ -346,7 +339,6 @@
             panel4.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
@@ -372,7 +364,6 @@
         private Button btnKatalog;
         private Panel panel2;
         private Label label1;
-        private Panel panel9;
         private DataGridView dataGridView1;
     }
 }

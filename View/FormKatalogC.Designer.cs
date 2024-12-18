@@ -51,9 +51,9 @@
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.BackgroundColor = Color.FromArgb(76, 111, 87);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(116, 9);
+            dataGridView1.Location = new Point(107, 18);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(800, 145);
+            dataGridView1.Size = new Size(726, 145);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -72,7 +72,7 @@
             button1.Anchor = AnchorStyles.None;
             button1.BackColor = Color.FromArgb(76, 111, 87);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(443, -44);
+            button1.Location = new Point(406, -82);
             button1.Name = "button1";
             button1.Size = new Size(76, 31);
             button1.TabIndex = 2;
@@ -85,7 +85,7 @@
             button2.Anchor = AnchorStyles.None;
             button2.BackColor = Color.FromArgb(76, 111, 87);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(456, 207);
+            button2.Location = new Point(419, 169);
             button2.Name = "button2";
             button2.Size = new Size(74, 31);
             button2.TabIndex = 3;
@@ -98,7 +98,7 @@
             button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button3.BackColor = Color.FromArgb(76, 111, 87);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(896, 453);
+            button3.Location = new Point(822, 378);
             button3.Name = "button3";
             button3.Size = new Size(75, 34);
             button3.TabIndex = 4;
@@ -113,9 +113,9 @@
             dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView2.BackgroundColor = Color.FromArgb(76, 111, 87);
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(116, 258);
+            dataGridView2.Location = new Point(116, 220);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(791, 157);
+            dataGridView2.Size = new Size(717, 157);
             dataGridView2.TabIndex = 5;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
@@ -123,7 +123,7 @@
             // 
             pictureBox2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(54, 453);
+            pictureBox2.Location = new Point(54, 378);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(48, 35);
             pictureBox2.TabIndex = 6;
@@ -133,7 +133,7 @@
             // 
             label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label1.AutoSize = true;
-            label1.Location = new Point(166, 464);
+            label1.Location = new Point(166, 389);
             label1.Name = "label1";
             label1.Size = new Size(13, 15);
             label1.TabIndex = 7;
@@ -143,7 +143,7 @@
             // 
             label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label2.AutoSize = true;
-            label2.Location = new Point(116, 464);
+            label2.Location = new Point(116, 389);
             label2.Name = "label2";
             label2.Size = new Size(32, 15);
             label2.TabIndex = 8;
@@ -154,7 +154,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(193, 244, 151);
-            ClientSize = new Size(1012, 500);
+            ClientSize = new Size(938, 425);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox2);
@@ -164,7 +164,6 @@
             Controls.Add(button1);
             Controls.Add(pictureBox1);
             Controls.Add(dataGridView1);
-            FormBorderStyle = FormBorderStyle.None;
             Name = "FormKatalogC";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormKatalogC";

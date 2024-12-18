@@ -13,7 +13,7 @@ namespace COBA2.App.Context
     {
         private readonly LaporanBulananModel _model; //enkapsulasi
 
-        public C_LaporanBulanan() // konstruktor
+        public C_LaporanBulanan() // konstruktor 
         {
             _model = new LaporanBulananModel(); // penerapan enkapsulasi
         }
